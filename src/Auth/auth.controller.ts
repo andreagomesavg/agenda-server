@@ -10,7 +10,7 @@ import { AuthGuard } from './guards/auth.guard';
 export class AuthController {
     constructor (@Inject() private usuariosService:UsuariosService, @Inject() private jwtService:JwtService){}
 
-    @Post("/register")
+    @Post("/signup")
     async registarNuevoUsuario(@Body() createUsuarioDto:CreateUsuarioDto){
         createUsuarioDto.password = await bcryptjs.hash(createUsuarioDto.password, 10);
         return this.usuariosService.create(createUsuarioDto);
