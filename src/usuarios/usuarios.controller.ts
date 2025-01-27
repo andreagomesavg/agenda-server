@@ -13,7 +13,7 @@ export class UsuariosController {
     return this.usuariosService.create(createUsuarioDto);
   }
 
-  @UseGuards(AuthGuard)
+ 
   @Get()
   findAll() {
     return this.usuariosService.findAll();
